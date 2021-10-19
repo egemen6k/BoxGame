@@ -8,7 +8,7 @@ public class Target : MonoBehaviour
     private float _maxSpeed = 16;
     private float _maxTorque = 10;
     private float xRange = 4;
-    private float ySpawnPos = -6;
+    private float ySpawnPos = -2;
     private Rigidbody _rb;
 
     // Start is called before the first frame update
@@ -24,6 +24,16 @@ public class Target : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
     }
 
     Vector3 RandomForce()
